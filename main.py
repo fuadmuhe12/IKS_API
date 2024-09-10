@@ -22,6 +22,7 @@ async def fill_and_submit_form(registeration: str, name: str):
             }
 
         try:
+            await page.wait_for_selector('input[placeholder="Registration Number"]', timeout=10000)  
             await page.fill('input[placeholder="Registration Number"]', registeration)
             await page.fill('input[placeholder="First Name"]', name)
             print("Form filled")

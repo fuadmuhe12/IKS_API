@@ -4,6 +4,7 @@ from pydantic import BaseModel
 import asyncio
 
 async def fill_and_submit_form(registeration: str, name: str):
+    print("function called")
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         print("Browser launched")
